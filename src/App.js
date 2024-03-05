@@ -2,13 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const personName = ['Polas', 'Ajay', 'Rashed', 'Dipok'];
-  const job = ['Student', 'NTARCA Teacher', 'Businessman', 'Jobless'];
+  const products = [
+    { name: "Photoshop", price: $100 },
+    { name: "Abode Acrobat", price: $120 },
+    { name: "Abode Prime", price: $200 },
+    { name: "Abode After Effect", price: $150 },
+    { name: "Abode Illustrator", price:$300 },
+  ];
   return (
     <div className="App">
       <header className="App-header">
-        <p>I am a react person</p>
-        <Person></Person>
+        {
+          products.map(pro => <product product={pro}></product>)
+        }
         
 
       </header>
@@ -16,13 +22,10 @@ function App() {
   );
 }
 
-function Person(props) {
-  return (
-    <div>
-      <h3>Name: {props.name}</h3>
-      <h5>Profession: {props.job}</h5>
-    </div>
-  )
-}
+function Product(props) {
+  <div>
+    <h1>{props.name}</h1>
+    <h3>{props.price}</h3>
+</div> };
 
 export default App;
